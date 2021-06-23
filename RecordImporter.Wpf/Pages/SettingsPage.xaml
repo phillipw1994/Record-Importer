@@ -1,0 +1,234 @@
+﻿<Page x:Class="RecordImporter.Wpf.Pages.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:viewModels="clr-namespace:RecordImporter.Wpf.Pages.ViewModels"
+      xmlns:dragablz="http://dragablz.net/winfx/xaml/dragablz"
+      mc:Ignorable="d"
+      d:DataContext="{d:DesignInstance Type=viewModels:SettingsPageVm, IsDesignTimeCreatable=False}"
+      Background="{StaticResource BackgroundLightBrush}"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Loaded="SettingsPage_OnLoaded"
+      Title="SettingsPage">
+    <Page.Resources>
+        <Style x:Key="RowHeaderStyle" TargetType="{x:Type DataGrid}">
+            <Setter Property="Foreground" Value="SlateGray" />
+        </Style>
+    </Page.Resources>
+    <Grid Margin="5,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Style="{StaticResource TitleText}" Text="Settings" />
+        <dragablz:TabablzControl FixedHeaderCount="3" Grid.Row="1" >
+            <TabItem Header="Locations">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="80"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" MaxWidth="300" />
+                            <ColumnDefinition Width="*" MaxWidth="300"  />
+                            <ColumnDefinition Width="*" MaxWidth="300"  />
+                        </Grid.ColumnDefinitions>
+
+                        <Button Grid.Column="0" Width="170" Height="40" Background="PaleGreen" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Command="{Binding AddButtonCommand}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="PlusCircle" Height="25" Width="25" Foreground="DarkSlateGray" />
+                                <TextBlock Text="Add" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="15 0"
+                               FontSize="18" Foreground="DarkSlateGray" />
+                            </StackPanel>
+                        </Button>
+
+                        <Button Grid.Column="1" Width="170" Height="40" Background="PaleGreen" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Command="{Binding EditButtonCommand}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Edit" Height="25" Width="25" Foreground="DarkSlateGray" />
+                                <TextBlock Text="Edit" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="15 0"
+                               FontSize="18" Foreground="DarkSlateGray" />
+                            </StackPanel>
+                        </Button>
+
+                        <Button Grid.Column="2" Width="170" Height="40" Background="PaleGreen" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Command="{Binding DeleteButtonCommand}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Delete" Height="25" Width="25" Foreground="DarkSlateGray" />
+                                <TextBlock Text="Delete" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="15 0"
+                               FontSize="18" Foreground="DarkSlateGray" />
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <DataGrid Grid.Column="0" RowHeaderStyle="{StaticResource RowHeaderStyle}" Margin="3 1 5 8">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Export Location"  />
+                                <DataGridTextColumn Header="Import Location" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                        <Grid IsEnabled="False" Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60" MaxHeight="60" />
+                                <RowDefinition Height="*" MaxHeight="80" />
+                                <RowDefinition Height="*" MaxHeight="80" />
+                                <RowDefinition Height="*" MaxHeight="80" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Edit Location:" Style="{StaticResource H2Heading}" />
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Import Location:" Style="{StaticResource PageText}" />
+                            <Grid Grid.Row="1" Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBox Grid.Column="0" Foreground="White" BorderBrush="White" Height="40" FontSize="18" materialDesign:TextFieldAssist.UnderlineBrush="PaleGreen" />
+                                <Button Grid.Column="1" Background="PaleGreen" HorizontalAlignment="Center" VerticalAlignment="Center"
+                            Command="{Binding ImportLocationButtonCommand}">
+                                    <materialDesign:PackIcon Kind="Folder" Height="25" Width="25" Foreground="DarkSlateGray" />
+                                </Button>
+                            </Grid>
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Export Location:" Style="{StaticResource PageText}" />
+                            <Grid Grid.Row="2" Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBox Grid.Column="0" Foreground="White" BorderBrush="White" Height="40" FontSize="18" materialDesign:TextFieldAssist.UnderlineBrush="PaleGreen" />
+                                <Button Grid.Column="1" Background="PaleGreen" HorizontalAlignment="Center" VerticalAlignment="Center"
+                            Command="{Binding ExportLocationButtonCommand}">
+                                    <materialDesign:PackIcon Kind="Folder" Height="25" Width="25" Foreground="DarkSlateGray" />
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="2" Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button Grid.Column="0" Background="Tomato" Width="200" Height="60" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                Command="{Binding CancelButtonCommand}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Close" Height="25" Width="25" Foreground="DarkSlateGray" />
+                                <TextBlock Text="Close" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="15 0"
+                                           FontSize="18" Foreground="DarkSlateGray" />
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Device Settings">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="80" />
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Grid.Row="0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" MaxWidth="400" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Select a Device:"
+                                       HorizontalAlignment="Right" Margin="0 0 10 0" Style="{StaticResource PageText}" />
+                            <ComboBox Grid.Row="0" Grid.Column="1" Margin="15" FontSize="18"
+                                  ItemsSource="{Binding ConnectedDevices}"
+                                  SelectedItem="{Binding SelectedDevice}"
+                                  BorderBrush="{StaticResource WhiteBrush}"
+                                  Foreground="White"
+                                  materialDesign:TextFieldAssist.UnderlineBrush="PaleGreen" />
+                            <Button Grid.Row="0" Grid.Column="2" Width="150" Height="40" HorizontalAlignment="Left" Background="DarkSlateGray" Command="{Binding RefreshDevicesCommand}">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="Refresh" Height="25" Width="25" Foreground="White" />
+                                    <TextBlock Text="Refresh" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="15 0"
+                                           FontSize="18" Foreground="White" />
+                                </StackPanel>
+                            </Button>
+
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Select Device OS:"
+                                   HorizontalAlignment="Right" Margin="0 0 10 0" Style="{StaticResource PageText}" />
+                            <ComboBox Grid.Row="1" Grid.Column="1" Margin="15" FontSize="18"
+                                  ItemsSource="{Binding DeviceOsList}"
+                                  SelectedItem="{Binding SelectedDeviceOs}"
+                                  BorderBrush="{StaticResource WhiteBrush}"
+                                  Foreground="White"
+                                  materialDesign:TextFieldAssist.UnderlineBrush="PaleGreen" />
+
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Storage Folder:"
+                                   HorizontalAlignment="Right" Margin="0 0 10 0" Style="{StaticResource PageText}" />
+                            <ComboBox Grid.Row="2" Grid.Column="1" Margin="15" FontSize="18" MaxWidth="300"
+                                  Foreground="White"
+                                  SelectedItem="{Binding SelectedStorageFolder}"
+                                  ItemsSource="{Binding StorageFolders}"
+                                  BorderBrush="{StaticResource WhiteBrush}"
+                                  materialDesign:TextFieldAssist.UnderlineBrush="PaleGreen" />
+
+                            <TextBlock Grid.Row="3" Grid.Column="0" Text="Software Folder:"
+                                   HorizontalAlignment="Right" Margin="0 0 10 0" Style="{StaticResource PageText}" />
+                            <TextBox Grid.Row="3" Grid.Column="1" Margin="15" FontSize="18" MaxWidth="300"
+                                 Foreground="White"
+                                 IsReadOnly="True"
+                                 Text="{Binding RaceSoftwareFolder}"
+                                 BorderBrush="{StaticResource WhiteBrush}"
+                                 materialDesign:TextFieldAssist.UnderlineBrush="PaleGreen" />
+
+                            <TextBlock Grid.Row="4" Grid.Column="0" Text="Software Product:"
+                                   HorizontalAlignment="Right" Margin="0 0 10 0" Style="{StaticResource PageText}" />
+                            <TextBox Grid.Row="4" Grid.Column="1" Margin="15" FontSize="18" MaxWidth="300"
+                                 Foreground="White"
+                                 Text="{Binding SoftwareProductFolder}"
+                                 BorderBrush="{StaticResource WhiteBrush}"
+                                 materialDesign:TextFieldAssist.UnderlineBrush="PaleGreen" />
+                        </Grid>
+                    </ScrollViewer>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button Grid.Column="0" Background="Tomato" Width="200" Height="60" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                    Command="{Binding CancelButtonCommand}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Close" Height="25" Width="25" Foreground="DarkSlateGray" />
+                                <TextBlock Text="Close" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="15 0"
+                                               FontSize="18" Foreground="DarkSlateGray" />
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="1" Background="PaleGreen" Width="200" Height="60" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                    Command="{Binding SaveButtonCommand}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Floppy" Height="25" Width="25" Foreground="DarkSlateGray" />
+                                <TextBlock Text="Save" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="15 0"
+                                               FontSize="18" Foreground="DarkSlateGray" />
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </dragablz:TabablzControl>
+    </Grid>
+</Page>
