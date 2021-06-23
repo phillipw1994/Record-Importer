@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using Race.Windows.Ns.Poller;
 using RecordImporter.JsonSettings;
-using RecordImporter.Model;
 using RecordImporter.Wpf.FileSystem.Workers;
 
 namespace RecordImporter.Wpf.FileSystem

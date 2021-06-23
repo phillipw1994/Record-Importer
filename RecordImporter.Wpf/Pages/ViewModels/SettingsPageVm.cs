@@ -6,7 +6,6 @@ using System.Windows.Input;
 using Race.Windows.Ns.JsonSettings.Managers;
 using Race.Windows.Wpf.Base;
 using RecordImporter.JsonSettings;
-using RecordImporter.Model;
 using RecordImporter.Wpf.Enums;
 using RecordImporter.Wpf.EventDelegates;
 using RecordImporter.Wpf.Pages.Locations;

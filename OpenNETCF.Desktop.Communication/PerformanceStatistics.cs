@@ -22,7 +22,7 @@
 	http://www.opennetcf.org
 
 =======================================================================================*/
-using System;
+
 using System.Collections;
 
 namespace OpenNETCF.Desktop.Communication

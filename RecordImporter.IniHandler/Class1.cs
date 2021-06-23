@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RecordImporter.IniHandler
+﻿namespace RecordImporter.IniHandler
 {
     public class Class1
     {

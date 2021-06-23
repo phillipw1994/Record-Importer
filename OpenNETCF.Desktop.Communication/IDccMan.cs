@@ -39,7 +39,6 @@ DEFINE_GUID(CLSID_DccMan,
 * 
 */
 
-using System;
 using System.Runtime.InteropServices;
 
 

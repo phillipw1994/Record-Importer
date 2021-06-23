@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Race.Windows.Ns.JsonSettings.Settings;
+﻿using Race.Windows.Ns.JsonSettings.Settings;
 
 namespace RecordImporter.JsonSettings
 {

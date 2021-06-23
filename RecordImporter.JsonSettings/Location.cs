@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace RecordImporter.JsonSettings
+﻿namespace RecordImporter.JsonSettings
 {
     public class Location
     {
