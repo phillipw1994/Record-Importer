@@ -1,5 +1,5 @@
 # Record-Importer
-## Work in Progress
+## Work in Progress (Old Project from 2018)
 This application was designed to move files on and off of mobile devices running Windows Ce and Android.
 The main Ui of the application was developed using WPF (Windows Presentation Foundation)
 It also makes use of the MVVM design
