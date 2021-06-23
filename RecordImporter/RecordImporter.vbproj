@@ -163,9 +163,9 @@
     <None Include="RaceLogo.gif" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RACEGUIObjectsLib\RACEGUIObjectsLib.csproj">
+    <ProjectReference Include="..\GUIObjectsLib\GUIObjectsLib.csproj">
       <Project>{ee3e4ecb-d543-43bb-91d3-c1d058f1806a}</Project>
-      <Name>RACEGUIObjectsLib</Name>
+      <Name>GUIObjectsLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />

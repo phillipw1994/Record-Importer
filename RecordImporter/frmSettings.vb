@@ -1,4 +1,6 @@
 ﻿Imports System.IO
+Imports GUIObjectsLib
+
 Public Class frmSettings
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
@@ -50,21 +52,21 @@ Public Class frmSettings
         Dim savePath As String = Path.GetDirectoryName(sf.FileName)
         Return savePath
     End Function
-    Private Sub NiceBtnPCPathImport1__EvtClicked(nbButton As RaceGUIObjectsLib.NiceButton) Handles NiceBtnPCPathImport1._EvtClicked
+    Private Sub NiceBtnPCPathImport1__EvtClicked(nbButton As NiceButton) Handles NiceBtnPCPathImport1._EvtClicked
         Dim savePath As String = SaveLocation()
         If savePath <> "" Then
             txtPCPathImport1.Text = savePath
         End If
     End Sub
 
-    Private Sub NiceBtnPCPathImport2__EvtClicked(nbButton As RaceGUIObjectsLib.NiceButton) Handles NiceBtnPCPathImport2._EvtClicked
+    Private Sub NiceBtnPCPathImport2__EvtClicked(nbButton As NiceButton) Handles NiceBtnPCPathImport2._EvtClicked
         Dim savePath As String = SaveLocation()
         If savePath <> "" Then
             txtPCPathImport2.Text = savePath
         End If
     End Sub
 
-    Private Sub NiceBtnPathOnDesktopExport__EvtClicked(nbButton As RaceGUIObjectsLib.NiceButton) Handles NiceBtnPathOnDesktopExport._EvtClicked
+    Private Sub NiceBtnPathOnDesktopExport__EvtClicked(nbButton As NiceButton) Handles NiceBtnPathOnDesktopExport._EvtClicked
         Dim savePath As String = SaveLocation()
         If savePath <> "" Then
             txtPathOnDesktopExport.Text = savePath

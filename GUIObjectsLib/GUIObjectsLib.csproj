@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EE3E4ECB-D543-43BB-91D3-C1D058F1806A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GUIObjectsLib</RootNamespace>
+    <AssemblyName>GUIObjectsLib</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>bin\Debug\GUIObjectsLib.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>GUIObjectsLib.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomMessageBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DatabaseTableEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatabaseTableEditor.Designer.cs">
+      <DependentUpon>DatabaseTableEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtendedComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frmDateRangeSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDateRangeSelector.Designer.cs">
+      <DependentUpon>frmDateRangeSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupBoxMod.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Input\Input.cs" />
+    <Compile Include="Input\InputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Input\InputForm.Designer.cs">
+      <DependentUpon>InputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListviewColumnSorter.cs" />
+    <Compile Include="LoadingCircle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LoadingCircle.Designer.cs">
+      <DependentUpon>LoadingCircle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoadingCircleToolStripMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NiceButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NiceButton.designer.cs">
+      <DependentUpon>NiceButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NiceListbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NiceListbox.Designer.cs">
+      <DependentUpon>NiceListbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NiceTextbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NiceTextbox.designer.cs">
+      <DependentUpon>NiceTextbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NullableNumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Option\Selection.cs" />
+    <Compile Include="Option\SelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Option\SelectionForm.Designer.cs">
+      <DependentUpon>SelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LoadingCircleSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadingCircleSplash.Designer.cs">
+      <DependentUpon>LoadingCircleSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="raceTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SmartComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextBoxSmartSelect.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DatabaseTableEditor.resx">
+      <DependentUpon>DatabaseTableEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDateRangeSelector.resx">
+      <DependentUpon>frmDateRangeSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Input\InputForm.resx">
+      <DependentUpon>InputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadingCircleSplash.resx">
+      <DependentUpon>LoadingCircleSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NiceButton.resx">
+      <DependentUpon>NiceButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NiceListbox.resx">
+      <DependentUpon>NiceListbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NiceTextbox.resx">
+      <DependentUpon>NiceTextbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Option\SelectionForm.resx">
+      <DependentUpon>SelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmartComboBox.resx">
+      <DependentUpon>SmartComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GUIObjectsLib.snk" />
+    <None Include="Resources\field-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScrollSlider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\glossy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\glossyHDR.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"
+ if not exist "$(TargetPath).locked" if exist "$(TargetPath)" move "$(TargetPath)" "$(TargetPath).locked"</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

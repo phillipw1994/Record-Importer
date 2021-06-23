@@ -42,7 +42,7 @@ Partial Class frmMain
         '
         'pbxLogo
         '
-        Me.pbxLogo.Image = Global.RecordImporter.My.Resources.Resources.RaceLogo_New
+        Me.pbxLogo.Image = Global.RecordImporter.My_Project.Resources.RaceLogo_New
         Me.pbxLogo.Location = New System.Drawing.Point(313, 205)
         Me.pbxLogo.Name = "pbxLogo"
         Me.pbxLogo.Size = New System.Drawing.Size(177, 68)

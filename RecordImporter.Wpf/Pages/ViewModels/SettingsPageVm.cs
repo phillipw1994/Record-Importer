@@ -43,7 +43,7 @@ namespace RecordImporter.Wpf.Pages.ViewModels
 
         private PortableDeviceDataSync Pdds { get; }
 
-        public BindingList<Location> Locations { get; set; }
+        public BindingList<JsonSettings.Location> Locations { get; set; }
         public BindingList<string> ConnectedDevices { get; set; }
         public BindingList<string> DeviceOsList { get; set; }
         public BindingList<string> StorageFolders { get; set; }
@@ -90,8 +90,8 @@ namespace RecordImporter.Wpf.Pages.ViewModels
             ConnectedDevices = new BindingList<string>();
             DeviceOsList = new BindingList<string>();
             StorageFolders = new BindingList<string>();
-            Locations = new BindingList<Location>();
-            Pdds = new PortableDeviceDataSync(new List<Location>());
+            Locations = new BindingList<JsonSettings.Location>();
+            Pdds = new PortableDeviceDataSync(new List<Model.Location>());
 
             //Setup Buttons
             CancelButtonCommand = new RelayCommand(async param => await CancelButtonCommandAsync(), param => true);
@@ -198,7 +198,7 @@ namespace RecordImporter.Wpf.Pages.ViewModels
                 SoftwareProductFolder = settings.ProductFolder;
             }
             else
-                settings = new ProgramSettings { Locations = new List<Location>() };
+                settings = new ProgramSettings { Locations = new List<JsonSettings.Location>() };
 
             Settings = settings;
             return Task.CompletedTask;

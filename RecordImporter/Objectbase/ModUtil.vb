@@ -1,3 +1,5 @@
-﻿Public Class ModUtil
+﻿Namespace Objectbase
+    Public Class ModUtil
 
-End Class
+    End Class
+End NameSpace

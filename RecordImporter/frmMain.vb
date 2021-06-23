@@ -1,6 +1,7 @@
 Imports System.IO
 Imports System.Threading
 Imports System.IO.IsolatedStorage
+Imports GUIObjectsLib
 
 
 Public Class frmMain
@@ -21,7 +22,7 @@ Public Class frmMain
             tmrCheck.Interval = 3000
             tmrCheck.Enabled = True
             lblNotification.Text = "Checking connectivity ..."
-            Me.BackColor = RaceGUIObjectsLib.Util.raceBlue
+            Me.BackColor = Util.raceBlue
 
             INIFileFullName = My.Application.Info.DirectoryPath & "\" & INIFileName
 
